@@ -1,10 +1,9 @@
 pipeline {
-    agent { docker { image 'ruby:latest' } }
+    agent { docker { image 'ruby:alpine' } }
 	
     stages {
         stage('build') {
             steps {
-                sh 'gem install zookeeper -v "1.4.11" --source "https://rubygems.org/"'
                 // install required bundles
                 sh 'bundle install'
                 // build and run tests with coverage
