@@ -4,6 +4,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
+                sh apk add --no-cache git
                 // install required bundles
                 sh 'bundle install'
                 // build and run tests with coverage
